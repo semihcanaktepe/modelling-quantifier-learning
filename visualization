@@ -1,0 +1,16 @@
+// Visualization
+
+// This piece of code arranges the results of each run by trial index so that we
+// can visualize the probability of correct answer as a function of trial index.
+// Put the "results" into this function and then run the built-in visualization 
+// function of WebPPL.
+
+var transform = function(data,n,arr){
+  var value = mapData({data:data}, function(datum){datum[n]})
+  return n<0 ? _.reverse(arr) : transform(data,n-1,arr.concat(sum(value)/data.length))
+}
+
+var n = 80
+
+// Insert the name of the transformed 
+viz.line(_.range(1,n+1), transform(RESULTS,n,[]), {xLabel:"Trial Index", yLabel:"Correct (p)"})
