@@ -32,6 +32,8 @@ var transform = function(data,n,arr){
   return n<0 ? _.reverse(arr) : transform(data,n-1,arr.concat(value))
 }
 
+var n = 79
+
 // Change the name of the dataset to see other results.
 
 var c = transform(cres,n,[])
