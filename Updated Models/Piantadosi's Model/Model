@@ -86,7 +86,7 @@ var makeSetB = function(scene){
 
 var response = function(n){
   sample(Infer({method: "MCMC", kernel: "MH", burn:5, samples:100}, function(){
-    var data = JSON.parse(two)
+    var data = JSON.parse(INSERT THE DATASET!)
     var rule = combinator("bool",1)
     var rfn = rule["fn"]
     var rexp = rule["expr"]
