@@ -32,13 +32,7 @@ var post = function(data){
   var nl = transform(nlres,79,[])
   var eq = transform(eqres,79,[])
   var non = transform(nonres,79,[])
-  /*
-  var ti = _.range(1,81)
-  var f = function(x){return x * slope + estimate}
-  map2(function(x,y){
-    observe(Gaussian({mu:f(x), sigma:sigma}), y)
-  },ti, data)
-  */
+  
   var quan = uniformDraw(["not all", "not only", "not alone", "equi", "nonnon"])
   map(function(y){
     observe(Gaussian({mu:estimate_c, sigma:sigma_c}), y)
