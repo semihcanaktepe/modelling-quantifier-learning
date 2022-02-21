@@ -20,6 +20,7 @@ var transform = function(data,n,arr){
   var value = mapData({data:JSON.parse(data)}, function(datum){datum[n]})
   return n<0 ? _.reverse(arr) : transform(data,n-1,arr.concat(sum(value)/JSON.parse(data).length))
 }
+
 var n = 79
 
 // Insert the name of the data into RESULT!
@@ -29,10 +30,12 @@ viz.line(_.range(1,n+1), transform(RESULT!,n,[]), {xLabel:"Trial Index", yLabel:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 // Bayesian Posterior Mean Graph
-var transform2 = function(data,n,arr){
+var transform = function(data,n,arr){
   var value = [mapData({data:JSON.parse(data)}, function(datum){datum[n]})]
   return n<0 ? _.reverse(arr) : transform(data,n-1,arr.concat(value))
 }
+
+var n = 79
 
 // Change the name of the dataset to see other results.
 
