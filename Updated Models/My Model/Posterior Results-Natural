@@ -33,13 +33,7 @@ var post = function(data){
   var no = transform(nores,79,[])
   var some = transform(someres,79,[])
   var few = transform(fewres,79,[])
-  /*
-  var ti = _.range(1,81)
-  var f = function(x){return x * slope + estimate}
-  map2(function(x,y){
-    observe(Gaussian({mu:f(x), sigma:sigma}), y)
-  },ti, data)
-  */
+  
   var quan = uniformDraw(["all", "most", "half", "no", "some", "few"])
   map(function(y){
     observe(Gaussian({mu:estimate_all, sigma:sigma_all}), y)
